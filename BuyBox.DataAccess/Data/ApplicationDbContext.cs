@@ -1,7 +1,7 @@
 ﻿using BuyBox.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BuyBox.Data
+namespace BuyBox.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

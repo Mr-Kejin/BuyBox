@@ -1,4 +1,4 @@
-﻿using BuyBox.Data;
+﻿using BuyBox.DataAccess.Data;
 using BuyBox.Models;
 using Microsoft.AspNetCore.Mvc;
 

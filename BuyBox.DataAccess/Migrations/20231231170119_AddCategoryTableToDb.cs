@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BuyBox.Migrations
+namespace BuyBox.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

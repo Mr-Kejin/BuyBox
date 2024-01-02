@@ -1,4 +1,4 @@
-using BuyBox.Data;
+using BuyBox.DataAccess.Data; 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
