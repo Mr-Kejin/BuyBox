@@ -3,8 +3,9 @@ using BuyBox.DataAccess.Repository.IRepository;
 using BuyBox.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BuyBox.Controllers
+namespace BuyBox.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -14,9 +15,9 @@ namespace BuyBox.Controllers
         }
 
         public IActionResult Index()
-        {       
-            List <Category> objCategoryList = _unitOfWork.Category.GetAll().ToList(); 
-            return View(objCategoryList);            
+        {
+            List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
+            return View(objCategoryList);
         }
         public IActionResult Create()
         {
@@ -24,7 +25,7 @@ namespace BuyBox.Controllers
         }
         [HttpPost]
         public IActionResult Create(Category obj)
-        {           
+        {
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Add(obj);
@@ -36,13 +37,13 @@ namespace BuyBox.Controllers
         }
         public IActionResult Edit(int? id)
         {
-            if (id==null || id == 0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
             // Category? categoryFromDb = _db.Categories.Find(id);
             Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
-            if (categoryFromDb == null) 
+            if (categoryFromDb == null)
             {
                 return NotFound();
             }
@@ -86,7 +87,7 @@ namespace BuyBox.Controllers
             TempData["Success"] = "category Deleted successfully";
             return RedirectToAction("Index");
 
-            
+
         }
     }
 }
