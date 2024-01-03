@@ -7,15 +7,15 @@ namespace BuyBox.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly IUnitOfWork _UnitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         public CategoryController(IUnitOfWork unitOfWork)
         {
-            _UnitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {       
-            List <Category> objCategoryList = _UnitOfWork.Category.GetAll().ToList(); 
+            List <Category> objCategoryList = _unitOfWork.Category.GetAll().ToList(); 
             return View(objCategoryList);            
         }
         public IActionResult Create()
@@ -27,8 +27,8 @@ namespace BuyBox.Controllers
         {           
             if (ModelState.IsValid)
             {
-                _UnitOfWork.Category.Add(obj);
-                _UnitOfWork.Save();
+                _unitOfWork.Category.Add(obj);
+                _unitOfWork.Save();
                 TempData["Success"] = "category created successfully";
                 return RedirectToAction("Index");
             }
@@ -41,7 +41,7 @@ namespace BuyBox.Controllers
                 return NotFound();
             }
             // Category? categoryFromDb = _db.Categories.Find(id);
-            Category? categoryFromDb = _UnitOfWork.Category.Get(u => u.Id == id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             if (categoryFromDb == null) 
             {
                 return NotFound();
@@ -53,8 +53,8 @@ namespace BuyBox.Controllers
         {
             if (ModelState.IsValid)
             {
-                _UnitOfWork.Category.Update(obj);
-                _UnitOfWork.Save();
+                _unitOfWork.Category.Update(obj);
+                _unitOfWork.Save();
                 TempData["Success"] = "category updated successfully";
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace BuyBox.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _UnitOfWork.Category.Get(u => u.Id == id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             if (categoryFromDb == null)
             {
                 return NotFound();
@@ -76,13 +76,13 @@ namespace BuyBox.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _UnitOfWork.Category.Get(u => u.Id == id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _UnitOfWork.Category.Remove(obj);
-            _UnitOfWork.Save();
+            _unitOfWork.Category.Remove(obj);
+            _unitOfWork.Save();
             TempData["Success"] = "category Deleted successfully";
             return RedirectToAction("Index");
 
