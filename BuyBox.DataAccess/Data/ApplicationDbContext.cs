@@ -31,7 +31,9 @@ namespace BuyBox.DataAccess.Data
                     ListPrice = 12,
                     Price =11,
                     Price50 = 10,
-                    Price100 = 8
+                    Price100 = 8,
+                    CategoryId = 2,
+                    ImageUrl =""
                 },
                 new Product
                 {
@@ -41,7 +43,9 @@ namespace BuyBox.DataAccess.Data
                     ListPrice = 15,
                     Price = 14,
                     Price50 = 12,
-                    Price100 = 10
+                    Price100 = 10,
+                    CategoryId = 2,
+                    ImageUrl = ""
                 },
                 new Product
                 {
@@ -51,7 +55,9 @@ namespace BuyBox.DataAccess.Data
                     ListPrice = 70,
                     Price = 65,
                     Price50 = 65,
-                    Price100 = 60
+                    Price100 = 60,
+                    CategoryId = 1,
+                    ImageUrl = ""
                 },
                  new Product
                  {
@@ -61,7 +67,9 @@ namespace BuyBox.DataAccess.Data
                      ListPrice = 60,
                      Price = 60,
                      Price50 = 55,
-                     Price100 = 50
+                     Price100 = 50,
+                     CategoryId = 1,
+                     ImageUrl = ""
                  },
                   new Product
                   {
@@ -71,7 +79,9 @@ namespace BuyBox.DataAccess.Data
                       ListPrice = 110,
                       Price = 110,
                       Price50 =105,
-                      Price100 =100 
+                      Price100 =100,
+                      CategoryId = 1,
+                      ImageUrl = ""
                   },
                   new Product
                   {
@@ -81,7 +91,9 @@ namespace BuyBox.DataAccess.Data
                       ListPrice = 110,
                       Price = 110,
                       Price50 = 105,
-                      Price100 = 100
+                      Price100 = 100,
+                      CategoryId = 3,
+                      ImageUrl = ""
                   },
                    new Product
                    {
@@ -91,7 +103,9 @@ namespace BuyBox.DataAccess.Data
                        ListPrice = 60,
                        Price = 60,
                        Price50 = 55,
-                       Price100 = 52
+                       Price100 = 52,
+                       CategoryId = 4,
+                       ImageUrl = ""
                    },
                    new Product
                    {
@@ -101,7 +115,9 @@ namespace BuyBox.DataAccess.Data
                        ListPrice = 60,
                        Price = 60,
                        Price50 = 55,
-                       Price100 = 52
+                       Price100 = 52,
+                       CategoryId = 4,
+                       ImageUrl = ""
                    },
                    new Product
                    {
@@ -111,7 +127,9 @@ namespace BuyBox.DataAccess.Data
                        ListPrice = 60,
                        Price = 60,
                        Price50 = 55,
-                       Price100 = 52
+                       Price100 = 52,
+                       CategoryId = 4,
+                       ImageUrl = ""
                    },
                    new Product
                    {
@@ -121,7 +139,9 @@ namespace BuyBox.DataAccess.Data
                        ListPrice = 420,
                        Price = 420,
                        Price50 = 415,
-                       Price100 = 410
+                       Price100 = 410,
+                       CategoryId = 5,
+                       ImageUrl = ""
                    },
                     new Product
                     {
@@ -131,7 +151,9 @@ namespace BuyBox.DataAccess.Data
                         ListPrice = 400,
                         Price = 400,
                         Price50 = 395,
-                        Price100 = 390
+                        Price100 = 390,
+                        CategoryId = 5,
+                        ImageUrl = ""
                     },
                      new Product
                      {
@@ -141,7 +163,9 @@ namespace BuyBox.DataAccess.Data
                          ListPrice = 400,
                          Price = 400,
                          Price50 = 395,
-                         Price100 = 390
+                         Price100 = 390,
+                         CategoryId = 6,
+                         ImageUrl = ""
                      }
                 );
 

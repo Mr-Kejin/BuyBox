@@ -3,6 +3,7 @@ using BuyBox.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuyBox.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240104130124_addForeignKeyForCategoryProductRelation")]
+    partial class addForeignKeyForCategoryProductRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,10 +97,6 @@ namespace BuyBox.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<double>("ListPrice")
                         .HasColumnType("float");
 
@@ -126,7 +125,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 1,
                             CategoryId = 2,
                             Description = "This is an regular brick",
-                            ImageUrl = "",
                             ListPrice = 12.0,
                             Price = 11.0,
                             Price100 = 8.0,
@@ -138,7 +136,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 2,
                             CategoryId = 2,
                             Description = "This is an Premium brick",
-                            ImageUrl = "",
                             ListPrice = 15.0,
                             Price = 14.0,
                             Price100 = 10.0,
@@ -150,7 +147,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 3,
                             CategoryId = 1,
                             Description = "This is M-sand used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 70.0,
                             Price = 65.0,
                             Price100 = 60.0,
@@ -162,7 +158,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 4,
                             CategoryId = 1,
                             Description = "This is P-sand used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 60.0,
                             Price = 60.0,
                             Price100 = 50.0,
@@ -174,7 +169,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 5,
                             CategoryId = 1,
                             Description = "This is River-sand used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 110.0,
                             Price = 110.0,
                             Price100 = 100.0,
@@ -186,7 +180,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 6,
                             CategoryId = 3,
                             Description = "This is Blue Metal used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 110.0,
                             Price = 110.0,
                             Price100 = 100.0,
@@ -198,7 +191,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 7,
                             CategoryId = 4,
                             Description = "This is AAC Block used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 60.0,
                             Price = 60.0,
                             Price100 = 52.0,
@@ -210,7 +202,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 8,
                             CategoryId = 4,
                             Description = "This is AAC Block used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 60.0,
                             Price = 60.0,
                             Price100 = 52.0,
@@ -222,7 +213,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 9,
                             CategoryId = 4,
                             Description = "This is AAC Block used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 60.0,
                             Price = 60.0,
                             Price100 = 52.0,
@@ -234,7 +224,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 10,
                             CategoryId = 5,
                             Description = "This is best quality cement used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 420.0,
                             Price = 420.0,
                             Price100 = 410.0,
@@ -246,7 +235,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 11,
                             CategoryId = 5,
                             Description = "This is best quality cement used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 400.0,
                             Price = 400.0,
                             Price100 = 390.0,
@@ -258,7 +246,6 @@ namespace BuyBox.DataAccess.Migrations
                             Id = 12,
                             CategoryId = 6,
                             Description = "This is best quality AAC BLock paste used for building purpose",
-                            ImageUrl = "",
                             ListPrice = 400.0,
                             Price = 400.0,
                             Price100 = 390.0,
