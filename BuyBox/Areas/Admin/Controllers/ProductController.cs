@@ -1,7 +1,9 @@
 ﻿using BuyBox.DataAccess.Data;
 using BuyBox.DataAccess.Repository.IRepository;
 using BuyBox.Models;
+using BuyBox.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BuyBox.Areas.Admin.Controllers
 {
@@ -21,7 +23,16 @@ namespace BuyBox.Areas.Admin.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            ProductVM productVM = new()
+            {
+                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString(),
+                }),
+                Product = new Product()
+            };
+            return View(productVM);
         }
         [HttpPost]
         public IActionResult Create(Product obj)
