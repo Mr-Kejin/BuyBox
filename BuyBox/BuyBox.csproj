@@ -24,4 +24,8 @@
     <ProjectReference Include="..\BuyBox.DataAccess\BuyBox.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\products\" />
+  </ItemGroup>
+
 </Project>
