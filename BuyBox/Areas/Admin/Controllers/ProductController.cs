@@ -2,12 +2,15 @@
 using BuyBox.DataAccess.Repository.IRepository;
 using BuyBox.Models;
 using BuyBox.Models.ViewModels;
+using BuyBox.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BuyBox.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
