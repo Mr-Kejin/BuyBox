@@ -13,6 +13,7 @@ namespace BuyBox.DataAccess.Data
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Company> Companies { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,6 +29,14 @@ namespace BuyBox.DataAccess.Data
                new Category { Id = 5, Name = "Cement", DisplayOrder = 5 },
                new Category { Id = 6, Name = "Block Paste", DisplayOrder = 6 }
                );
+
+            modelBuilder.Entity<Company>().HasData(
+              new Company { Id = 1, Name = "Goodwill Construction", StreetAddress="No123 dubai cross st", City="Chennai",State="TN",PostalCode="600001",PhoneNumber="1234567890" },
+              new Company { Id = 2, Name = "Real Construction", StreetAddress = "No1 dummy cross st", City = "Chennai", State = "TN", PostalCode = "600001", PhoneNumber = "1234567890" },
+              new Company { Id = 3, Name = "Lets build", StreetAddress = "No2 dubai cross st", City = "Chennai", State = "TN", PostalCode = "600001", PhoneNumber = "1234567890" }
+
+              );
+
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {

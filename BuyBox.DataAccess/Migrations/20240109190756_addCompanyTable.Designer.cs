@@ -4,6 +4,7 @@ using BuyBox.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuyBox.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240109190756_addCompanyTable")]
+    partial class addCompanyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,38 +113,6 @@ namespace BuyBox.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Chennai",
-                            Name = "Goodwill Construction",
-                            PhoneNumber = "1234567890",
-                            PostalCode = "600001",
-                            State = "TN",
-                            StreetAddress = "No123 dubai cross st"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Chennai",
-                            Name = "Real Construction",
-                            PhoneNumber = "1234567890",
-                            PostalCode = "600001",
-                            State = "TN",
-                            StreetAddress = "No1 dummy cross st"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Chennai",
-                            Name = "Lets build",
-                            PhoneNumber = "1234567890",
-                            PostalCode = "600001",
-                            State = "TN",
-                            StreetAddress = "No2 dubai cross st"
-                        });
                 });
 
             modelBuilder.Entity("BuyBox.Models.Product", b =>
