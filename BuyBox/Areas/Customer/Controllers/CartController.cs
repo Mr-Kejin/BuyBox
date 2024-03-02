@@ -138,7 +138,7 @@ namespace BuyBox.Areas.Customer.Controllers
                         PriceData = new SessionLineItemPriceDataOptions()
                         {
                             UnitAmount = (long)(item.Price * 100),
-                            Currency = "usd",  // use inr fro indian rupees 
+                            Currency = "inr",  // use inr fro indian rupees 
                             ProductData = new SessionLineItemPriceDataProductDataOptions()
                             {
                                 Name = item.Product.Title

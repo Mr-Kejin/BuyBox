@@ -187,7 +187,7 @@
 
                                 @if (Model.OrderHeader.SessionId == null)
                                 {
-                                    <div class="col-3">Payment Due Date</div>
+                                    <div class="col-3">Payment due Date</div>
                                     <div class="col-9">
 
                                         <input value="@Model.OrderHeader.PaymentDueDate.ToShortDateString()" readonly type="text" class="form-control" />
@@ -195,7 +195,7 @@
                                 }
                                 else
                                 {
-                                    <div class="col-3">Payment due Date</div>
+                                    <div class="col-3">Payment Date</div>
                                     <div class="col-9">
 
                                         <input value="@Model.OrderHeader.PaymentDueDate.ToShortDateString()" readonly type="text" class="form-control" />
